@@ -107,4 +107,31 @@ public class AccountTriggerHandler {
 
 
     }
+    public static void MethodAssignmentStatus(List<Account> acctrigerNew){
+       
+        List<Account> accList = acctrigerNew;
+
+        List<Contact> conlist = new List<Contact>();
+
+        try{
+        for( Account each : accList){
+        Contact con = new Contact();
+        con.LastName = each.Name;
+        con.AccountId = each.Id;
+        conlist.add(con);
+     }
+     if(!conlist.isEmpty()){
+         insert conlist;
+         System.debug('conlist is inserted succesfully');
+     }
+    }
+    catch (exception ex){
+        for( Account each : accList){
+        
+        each.addError('DML error:  required status field on contact object is null');    
+        System.debug('DML error');
+
+        }
+    }
+    }
 }

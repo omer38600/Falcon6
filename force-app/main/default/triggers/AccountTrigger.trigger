@@ -127,14 +127,46 @@
         //     }
         // }
 
-        trigger AccountTrigger on Account (before insert, before update, after insert, after update) {
-            if(trigger.isBefore){
-                system.debug('before insert/update trigger called');
-                AccountTriggerHandler.updateAccountDescription(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.OldMap);
-                system.debug('before insert/update trigger end.');
+        // trigger AccountTrigger on Account (before insert, before update, after insert, after update) {
+        //     if(trigger.isBefore){
+        //         system.debug('before insert/update trigger called');
+        //         AccountTriggerHandler.updateAccountDescription(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.OldMap);
+        //         system.debug('before insert/update trigger end.');
                 
-            }
-            if(trigger.isAfter && trigger.isUpdate){
-                AccountTriggerHandler.updateVipForAllAcontacts(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.OldMap);
-            }
+        //     }
+        //     if(trigger.isAfter && trigger.isUpdate){
+        //         AccountTriggerHandler.updateVipForAllAcontacts(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.OldMap);
+        //     }
+        // }
+
+        trigger AccountTrigger on Account (before insert){
+        AccountTriggerHandler.MethodAssignmentStatus(trigger.new);
+
         }
+
+    //         List<Account> accList = trigger.new;
+
+    //         List<Contact> conlist = new List<Contact>();
+
+    //         try{
+    //         for( Account each : accList){
+    //         Contact con = new Contact();
+    //         con.LastName = each.Name;
+    //         con.AccountId = each.Id;
+    //         conlist.add(con);
+    //      }
+    //      if(!conlist.isEmpty()){
+    //          insert conlist;
+    //          System.debug('conlist is inserted succesfully');
+    //      }
+    //     }
+    //     catch (exception ex){
+    //         for( Account each : accList){
+            
+    //         each.addError('DML error required status field on contact object');    
+    //         System.debug('DML error');
+    //         }
+    //     }
+    // }
+
+
