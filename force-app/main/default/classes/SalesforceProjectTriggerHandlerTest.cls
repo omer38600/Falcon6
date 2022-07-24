@@ -21,6 +21,8 @@ public class SalesforceProjectTriggerHandlerTest {
         
         List<Salesforce_Project__c> sps = [select id, description__c from Salesforce_Project__c];
         system.assert(sps[0].Description__c.containsIgnoreCase('future'));
+
+    
     }
 
    

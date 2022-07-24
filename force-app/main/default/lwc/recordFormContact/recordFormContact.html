@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="LIGHTNING CONTACT COMPACT FORM" icon-name="standard:contact"> 
+        <div class="slds-m-around_medium">
+            <lightning-record-form
+            object-api-name={ObjectName}
+            record-id={recordId}
+            layout-type="Compact"
+            mode="readonly"
+            columns="2"
+            onerror={errorHandler}
+            onsuccess={successHandler}>     //fulllayout "full" or Compact of fields 
+        </lightning-record-form>
+           
+
+        </div>
+    </lightning-card>
+</template>

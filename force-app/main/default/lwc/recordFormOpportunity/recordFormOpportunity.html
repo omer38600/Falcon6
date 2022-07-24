@@ -1,0 +1,16 @@
+<template>
+    <lightning-card title="LIGHTNING OPORTUNITY RECORD FORM" icon-name="standard:opportunity"> 
+        <div class="slds-m-around_medium">
+            <lightning-record-form
+            object-api-name={objectName}
+            record-id={recordId}
+            fields={fields}
+            columns="2"
+            onerror={errorHandler}
+            onsuccess={successHandler}>     //fulllayout "full" or Compact of fields 
+        </lightning-record-form>
+           
+
+        </div>
+    </lightning-card>
+</template>

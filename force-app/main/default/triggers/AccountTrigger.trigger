@@ -110,7 +110,7 @@
         // }
 
         //important note: if we want to do changes on fields it should be before trigger in order
-        // to make changes to the fields. if after trigger it is read only we canot change//
+        // to make changes to the fields. if after trigger it is read only we cannot change//
         // //
         // trigger AccountTrigger on Account (before insert, before update, after insert, after update) {
         //     if(trigger.isBefore){

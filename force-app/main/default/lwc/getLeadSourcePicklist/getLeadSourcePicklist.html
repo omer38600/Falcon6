@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="GET PICKLIST VALUES-LEAD">
+        <div class="slds-m-around_medium">
+            <lightning-combobox 
+            label = "Select the lead source"
+            options = {leadSourceOptions}
+            value = {selectedLeadSource}
+            onchange= {leadsourceChangeHandler}>
+        </lightning-combobox>
+        <div class="slds-m-top_small"> Selected LeadSource is: {selectedLeadSource} </div>
+
+        </div>
+    </lightning-card>
+    
+</template>
